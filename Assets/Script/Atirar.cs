@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Atirar : MonoBehaviour
 {
-    public GameObject PontoDeSaida;
+    public Transform PontoDeSaida;
     public GameObject Bala;
     public int limiteMunicao;
     public int municao = 300000;
@@ -23,8 +23,7 @@ public class Atirar : MonoBehaviour
             if (municao > 0)
             {
                 municao--;
-
-                GameObject Disparo = Instantiate(Bala, PontoDeSaida.transform.position, Quaternion.identity);
+                GameObject Disparo = Instantiate(Bala, PontoDeSaida.position, Quaternion.identity);
                 Disparo.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
                 Destroy(Disparo, 2f);
             }

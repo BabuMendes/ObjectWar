@@ -8,6 +8,9 @@ public class Heroina : MonoBehaviour
     private NavMeshAgent Agente;
     private Vector3 Destino;
 
+    public float hp = 5;
+    public bool vivo = true;
+
     // Start is called before the first frame update
     void Start()
     {
