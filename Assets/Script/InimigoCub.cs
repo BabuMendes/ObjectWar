@@ -9,6 +9,7 @@ public class InimigoCub : MonoBehaviour
     public int hp = 1;
     public GameObject player;
     private NavMeshAgent navMesh;
+    public GameObject MeuAtaque;
 
     private void Start()
     {

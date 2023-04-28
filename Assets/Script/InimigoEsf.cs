@@ -9,6 +9,7 @@ public class InimigoEsf : MonoBehaviour
     public int hp = 1;
     public GameObject player;
     private NavMeshAgent navMesh;
+    public GameObject MeuAtaque;
 
     private void Start()
     {

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Heroina : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private NavMeshAgent Agente;
     private Vector3 Destino;
-
     public float hp = 5;
     public bool vivo = true;
 
@@ -35,5 +34,24 @@ public class Heroina : MonoBehaviour
 
 
         Agente.SetDestination(Destino);
+    }
+
+    private void OnTriggerEnter(Collider colidiu)
+    {
+        if (colidiu.gameObject.tag == "Inimigo")
+        {
+            if (vivo == true)
+            {
+                hp--;
+                //ControlAnim.SetTrigger("TomouDano");
+                if (hp <= 0)
+                {
+
+                    Destroy(this.gameObject);
+                }
+            }
+
+        }
+
     }
 }

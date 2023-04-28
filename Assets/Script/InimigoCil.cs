@@ -5,19 +5,20 @@ using UnityEngine.AI;
 
 public class InimigoCil : MonoBehaviour
 {
-
+    public GameObject Player;
     public int hp = 1;
-    public GameObject player;
+    public GameObject MeuAtaque;
     private NavMeshAgent navMesh;
 
     private void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         navMesh = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        navMesh.SetDestination(player.transform.position);
+        navMesh.SetDestination(Player.transform.position);
     }
 
     private void OnTriggerEnter(Collider colidiu)
@@ -36,4 +37,5 @@ public class InimigoCil : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }
